@@ -31,6 +31,10 @@ class SensorGNSS:
             H (ndarray[3, 15]): the measurement matrix
         """
 
+        H = np.zeros((3, 15))
+        H[:3, :3] = np.eye(3)
+        H[:3, 6:9] = -x_nom.ori.as_rotmat() @ get_cross_matrix(self.lever_arm)
+
         # TODO remove this
         H = sensors_solu.SensorGNSS.H(self, x_nom)
         return H
