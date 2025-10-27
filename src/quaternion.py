@@ -30,7 +30,7 @@ class RotationQuaterion(NamedArray):
 
     def multiply(self, other: 'RotationQuaterion') -> 'RotationQuaterion':
         """Multiply two rotation quaternions
-        Hint: see (10.33)
+        Hint: see (10.21)
 
         As __matmul__ is implemented for this class, you can later use:
         q1@q2 which is equivalent to q1.multiply(q2)
